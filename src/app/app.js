@@ -4,7 +4,7 @@ angular.module('homex', [
 
 .config(['$stateProvider', '$urlRouterProvider',
 	function homexConfig($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise('living_room');
+		$urlRouterProvider.otherwise('/living_room');
 	}
 ])
 

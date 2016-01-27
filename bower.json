@@ -14,7 +14,7 @@
     "angular": "1.4.x",
     "angular-sanitize": "1.4.x",
     "angular-resource": "1.4.x",
-    "angular-mocks": "1.2.5",
+    "angular-mocks": "1.4.x",
     "angular-ui-router": "0.2.x"
   },
   "overrides": {
@@ -26,5 +26,8 @@
     "angular-mocks": {
       "main": "README.md"
     }
+  },
+  "resolutions": {
+    "angular": "1.4.x"
   }
 }

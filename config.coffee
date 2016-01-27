@@ -2,12 +2,13 @@ exports.config =
   # See docs at https://github.com/brunch/brunch/blob/stable/docs/config.md.
   conventions:
     assets:  /^src\/assets\//
-    ignored: /^(bower_components\/bootstrap-less(-themes)?|app\/styles\/overrides|(.*?\/)?[_]\w*)/
+    ignored: /^(.*?\/)?[_]\w*/
   modules:
     definition: false
     wrapper: false
   paths:
     public: '_public'
+    watched: ['src']
   files:
     javascripts:
       joinTo:
@@ -22,6 +23,13 @@ exports.config =
           'app/styles/app.less'
         ]
 
+    templates:
+      joinTo: {
+        'js/templates.js': /^src/
+      },
+      order: {
+        before: ['src/app.js']
+      }
 
   # Enable or disable minifying of result js / css files.
   # minify: true
