@@ -1,0 +1,30 @@
+{
+  "name": "homex",
+  "repo": "baggrey1/homex",
+  "version": "0.0.1",
+  "main": "_public/js/app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "bootstrap-less": "3.3.x",
+    "angular-bootstrap": "1.1.x",
+    "angular": "1.4.x",
+    "angular-sanitize": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-mocks": "1.2.5",
+    "angular-ui-router": "0.2.x"
+  },
+  "overrides": {
+    "bootstrap-less": {
+      "ignore": [
+        "*"
+      ]
+    },
+    "angular-mocks": {
+      "main": "README.md"
+    }
+  }
+}
