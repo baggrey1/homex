@@ -1,9 +1,19 @@
-angular.module('homex', [
-	'ui.router'
+angular.module('app', [
+	'ui.router',
+	'homex.livingRoom'
 ])
 
-.config(['$stateProvider', '$urlRouterProvider',
-	function homexConfig($stateProvider, $urlRouterProvider) {
+.value('ledAPIURL', 'http://192.168.1.100:5000/')
+.value('bedroomURL', 'http://192.168.1.102:5000/')
+.value('remoteURL', 'http://192.168.1.101:4444/')
+
+.config(['$locationProvider', '$httpProvider', '$urlRouterProvider',
+	function homexConfig($locationProvider, $httpProvider, $urlRouterProvider) {
+		// CORS
+		$httpProvider.defaults.useXDomain = true;
+		delete $httpProvider.defaults.headers.common['X-Requested-With'];
+		$locationProvider.html5Mode(true);
+
 		$urlRouterProvider.otherwise('/living_room');
 	}
 ])

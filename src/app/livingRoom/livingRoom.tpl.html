@@ -1,0 +1,23 @@
+<div class="container">
+	<p>Turn on the lights, then control the color.</p>
+	<div class="btn-group">
+		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+		Mode <span class="caret"></span>
+		 </button>
+		<ul class="dropdown-menu" role="menu">
+	    <li><a href="#steady">Steady</a></li>
+	    <li><a href="#flash">Flash</a></li>
+	    <li><a href="#ramp">Ramp</a></li>
+	    <li class="divider"></li>
+	    <li><a href="#crazy">Experimental</a></li>
+		</ul>
+	</div>
+	<span ng-repeat="state in states"><button type="button" class="btn {{state.button}}" ng-click="easy_command.clicked(state.command)">{{state.text}}</button> </span>
+
+	<hr>
+	<p>Color selection</p>
+	<span ng-repeat="profile in profiles"><button type="button" class="btn {{profile.button}}" ng-click="easy_command.clicked(profile.color)">{{profile.color}}</button> </span>
+	<hr>
+	<p>Remotes</p>
+	<span ng-repeat="remoteButton in remoteButtons"><button type="button" class="btn {{remoteButton.buttonClass}}" ng-click="irSend(remoteButton.device, remoteButton.lircCommand)">{{remoteButton.buttonText}}</button> </span>
+</div>

@@ -29,6 +29,8 @@
     "uglify-js-brunch": "1.7.x",
     "clean-css-brunch": "1.8.x",
 
+    "aang-template-brunch": "1.7.x",
+
     "bower": "1.7.x"
   }
 }
