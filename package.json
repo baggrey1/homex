@@ -10,12 +10,14 @@
   },
   "scripts": {
     "postinstall": "node_modules/bower/bin/bower install",
-    "start": "node_modules/.bin/brunch watch --server --port 5555",
+    "start":"node_modules/brunch/bin/brunch watch --server --port 4444",
+    "production": "node_modules/brunch/bin/brunch build; http-server ./_public -a 0.0.0.0 -p 5555 -c-1 ",
     "test": "node_modules/.bin/karma start test/karma.conf.js"
   },
   "dependencies": {
     "coffee-script": "1.10.x",
     "brunch": "2.2.x",
+    "http-server": "0.8.x",
 
     "javascript-brunch": "1.8.x",
     "coffee-script-brunch": "1.8.x",
