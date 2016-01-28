@@ -16,9 +16,11 @@
     "angular-resource": "1.4.x",
     "angular-mocks": "1.4.x",
     "angular-ui-router": "0.2.x",
-    "angular-ui-slider": "0.1.1",
+    "angular-ui-slider": "0.1.3",
+    "jquery": "1.10.2",
+    "jquery-ui": "~1.10.x",
     "ng-socket":"0.1.x",
-    "socket.io-client":"1.4.x"
+    "socket.io-client":"0.9.16"
   },
   "overrides": {
     "bootstrap-less": {
@@ -31,6 +33,12 @@
     },
     "socket.io-client": {
       "main": "./dist/socket.io.js"
+    },
+    "jquery-ui": {
+      "main": [
+        "ui/jquery-ui.js",
+        "themes/base/jquery-ui.css"
+      ]
     }
   },
   "resolutions": {

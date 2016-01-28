@@ -6,8 +6,8 @@ angular.module('homex.briansRoom', [
 	'ui.slider'
 ])
 
-.config(['$stateProvider',
-	function config($stateProvider, $socketProvider, bedroomSocketURL) {
+.config(['$stateProvider', '$socketProvider',
+	function config($stateProvider, $socketProvider) {
 		$stateProvider.state('briansRoom', {
 			url: '/brians_room',
 			views: {
@@ -17,12 +17,12 @@ angular.module('homex.briansRoom', [
 				},
 				"main": {
 					controller: 'briansRoomCtrl',
-					templateUrl: 'src/app/livingRoom/livingRoom.tpl.html'
+					templateUrl: 'src/app/briansRoom/briansRoom.tpl.html'
 				}
 			}
 		})
 
-		$socketProvider.setUrl(bedroomSocketURL);
+		$socketProvider.setUrl('http://192.168.1.102:5000/');
 	}
 ])
 
@@ -33,14 +33,26 @@ angular.module('homex.briansRoom', [
 			{text:'LEDs off', button:'btn-default', command:'off'}
 		];
 
+		$scope.colors = [
+			{'name': 'red', 'intensity':175},
+			{'name':'green', 'intensity':150},
+			{'name':'blue', 'intensity':140,}
+		];
+
 		$scope.bedroom_command = function(state) {
 			$http.get(bedroomServerURL+'state/', {
 				params:{command: state}
 			});
 		};
 		$scope.lastStateQuery = $http.get(
-			bedroomURL+'last-state/').then(function(response) {
-				$scope.colors = response.lastColor
+			bedroomServerURL+'last-state/').then(function(response) {
+				var colorsObject = response.data.lastColor
+				var colorsArray = [
+					{'name':'red', 'intensity': colorsObject.red},
+					{'name':'green', 'intensity': colorsObject.green},
+					{'name':'blue', 'intensity': colorsObject.blue}
+				]
+			//	angular.copy(colorsArray, $scope.colors);
 			});
 		
 		$scope.$watch('colors',function() {
