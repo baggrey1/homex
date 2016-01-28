@@ -9,13 +9,16 @@
     "components"
   ],
   "dependencies": {
-    "bootstrap-less": "3.3.x",
+    "bootstrap": "3.3.x",
     "angular-bootstrap": "1.1.x",
     "angular": "1.4.x",
     "angular-sanitize": "1.4.x",
     "angular-resource": "1.4.x",
     "angular-mocks": "1.4.x",
-    "angular-ui-router": "0.2.x"
+    "angular-ui-router": "0.2.x",
+    "angular-ui-slider": "0.1.1",
+    "ng-socket":"0.1.x",
+    "socket.io-client":"1.4.x"
   },
   "overrides": {
     "bootstrap-less": {
@@ -25,6 +28,9 @@
     },
     "angular-mocks": {
       "main": "README.md"
+    },
+    "socket.io-client": {
+      "main": "./dist/socket.io.js"
     }
   },
   "resolutions": {

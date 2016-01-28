@@ -3,8 +3,11 @@ angular.module('navbar', [
 	'ui.bootstrap'
 ])
 
-.controller('navbarCtrl', ['$scope', 
-	function navbarCtrl($scope) {
+.controller('navbarCtrl', ['$scope', '$state',
+	function navbarCtrl($scope, $state) {
+		$scope.setState = function(destination) {
+			$state.go(destination);
+		};
 		
 	}
 ])

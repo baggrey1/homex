@@ -1,0 +1,9 @@
+<div class="container">	
+	<span ng-repeat="state in states"><button type="button" class="btn {{state.button}}" ng-click="bedroom_command(state.command)">{{state.text}}</button> </span>
+	</div>
+	<br><br>
+	<div ng-repeat="color in colors">
+		<div id="{{color.name}}" ui-slider="colorOptions" ng-model="color.intensity"></div>
+		<br>
+	</div>
+</div>

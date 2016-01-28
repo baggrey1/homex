@@ -39,8 +39,8 @@ angular.module('homex.livingRoom', [
 			{color:'fuschia', button:'btn-default'}
 		];
 		$scope.remoteButtons = [
-			{buttonText: 'avr on', buttonClass:'btn-success', device:'AVR', lircCommand: 'KEY_AUDIO'},
-			{buttonText: 'avr off', buttonClass: 'btn-danger', device:'AVR', lircCommand: 'KEY_POWER'},
+			{buttonText: 'avr on', buttonClass:'btn-success', device:'AVR-power', lircCommand: 'KEY_POWER'},
+			{buttonText: 'avr off', buttonClass: 'btn-danger', device:'AVR-power', lircCommand: 'KEY_POWER2'},
 			{buttonText: 'projector', buttonClass: 'btn-danger', device: 'projector', lircCommand: 'KEY_POWER'},
 			{buttonText: 'vol +', buttonClass: 'btn-warning', device: 'AVR', lircCommand: 'KEY_VOLUMEUP'},
 			{buttonText: 'vol -', buttonClass: 'btn-warning', device: 'AVR', lircCommand: 'KEY_VOLUMEDOWN'},

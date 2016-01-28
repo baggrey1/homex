@@ -1,10 +1,12 @@
 angular.module('app', [
 	'ui.router',
-	'homex.livingRoom'
+	'homex.livingRoom',
+	'homex.briansRoom'
 ])
 
 .value('ledAPIURL', 'http://192.168.1.100:5000/')
-.value('bedroomURL', 'http://192.168.1.102:5000/')
+.value('bedroomServerURL', 'http://192.168.1.102:5555/')
+.value('bedroomSocketURL', 'http://192.168.1.102:5000/')
 .value('remoteURL', 'http://192.168.1.101:4444/')
 
 .config(['$locationProvider', '$httpProvider', '$urlRouterProvider',
